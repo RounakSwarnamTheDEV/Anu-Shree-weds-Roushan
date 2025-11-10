@@ -125,6 +125,28 @@
                         rgba(0, 0, 0, 0.9) 75%
                     );
                 }
+                
+                & > #tap {
+                    height: 70px;
+                    width: 70px;
+                    position: absolute;
+                    left: 50%;
+                    top: 70%;
+                    animation: softShake 2.8s ease-in-out infinite;
+                    opacity: 0;
+                    pointer-events: none;
+
+                    &.active {
+                        opacity: 1;
+                        transition: 0.3s;
+                    }
+
+                    & > img {
+                        height: 100%;
+                        width: 100%;
+                        pointer-events: none;
+                    }
+                }
 
                 & > .cta {
                     z-index: 9;
@@ -166,21 +188,6 @@
                     
                         &::after {
                             filter: blur(16px);
-                        }
-
-                        & > .tap {
-                            height: 70px;
-                            width: 70px;
-                            position: absolute;
-                            left: 50%;
-                            top: 70%;
-                            animation: softShake 2.8s ease-in-out infinite;
-
-                            & > img {
-                                height: 100%;
-                                width: 100%;
-                                pointer-events: none;
-                            }
                         }
                     }
                 }
@@ -772,6 +779,7 @@
                     <span>Click Anywhere !!</span>
                 </div>
             </div>
+            <div id="tap"><img src="assets/tap.png" /"></div>
         </div>
         <div class="roll">
             <div class="card" id="card1" style="--bg:url('assets/templates/Front.jpg')">
@@ -866,7 +874,6 @@
             setInterval(showNext, interval);
 
         // Open Card 
-            const openBtn = document.getElementById("opener");
             const music = document.getElementById("bgMusic");
             let musicStarted = false;
         
@@ -1014,6 +1021,10 @@
                 ]).then(() => {
                     document.body.classList.add("loaded");
                     document.getElementById("card0").classList.remove("hide")
+
+                    setTimeout(() => {
+                        document.getElementById("tap").classList.add("active"); 
+                    }, 6000);
                     
                     setTimeout(() => {
                         document.getElementById("opener").click();

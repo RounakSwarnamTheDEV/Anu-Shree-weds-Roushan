@@ -1016,6 +1016,10 @@
                 ]).then(() => {
                     document.body.classList.add("loaded");
                     document.getElementById("card0").classList.remove("hide")
+                    
+                    setTimeout(() => {
+                        document.getElementById("opener").click();
+                    }, 3000);
                 });
             });
         </script>

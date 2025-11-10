@@ -131,14 +131,9 @@
                     width: 70px;
                     position: absolute;
                     left: 50%;
-                    top: 70%;
+                    top: 40%;
                     animation: softShake 2.8s ease-in-out infinite;
-                    opacity: 0;
-                    pointer-events: none;
-
-                    &.active {
-                        opacity: 1;
-                    }
+                    display: none;
 
                     & > img {
                         height: 100%;
@@ -1022,7 +1017,7 @@
                     document.getElementById("card0").classList.remove("hide")
 
                     setTimeout(() => {
-                        document.getElementById("tap").classList.add("active"); 
+                        document.getElementById("tap").style.display = "block"; 
                     }, 6000);
                     
                     setTimeout(() => {

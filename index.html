@@ -769,9 +769,7 @@
             <div class="shader"></div>
             <div class="cta">
                 <div id="opener">
-                    <span>Invitation ...</span>
-                    <lord-icon src="https://cdn.lordicon.com/apmrcxtj.json" trigger="loop" delay="1000" stroke="bold" colors="primary:#ffffff,secondary:#ffffff" style="width:60px;height:60px"></lord-icon>
-                    <div class="tap"><img src="assets/tap.png" /"></div>
+                    <span>Click Anywhere !!</span>
                 </div>
             </div>
         </div>
@@ -872,7 +870,7 @@
             const music = document.getElementById("bgMusic");
             let musicStarted = false;
         
-            openBtn.addEventListener("click", async function() {
+            document.addEventListener("click", async function() {
                 document.querySelector("body").classList.add("done");
                 document.getElementById("card0").classList.add("hide");
                 document.querySelector(".roll").classList.add("active");
